@@ -1,0 +1,6 @@
+# Exclude environment variables and other files from being added to the Docker image
+.env
+__pycache__/
+*.pyc
+JupyterNotebookForMLModel.ipynb
+readme.md
