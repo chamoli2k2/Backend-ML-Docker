@@ -27,7 +27,7 @@ app = Flask(__name__)
 frontend_uri = os.getenv('FRONTEND_URI')
 
 # Enable CORS for only the specified origin from environment variable
-CORS(app, resources={r"/api/*": {"origins": [frontend_uri]}})
+CORS(app, resources={r"/api/*": {"origins": [frontend_uri, "http://localhost:5173/"]}})
 
 # Function to get similar diseases
 def similar(dis):
