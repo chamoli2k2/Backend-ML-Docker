@@ -1,9 +1,8 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from dotenv import load_dotenv  # Import the load_dotenv function from the dotenv module
-import os  # Import the os module to access environment variables
+from dotenv import load_dotenv
+import os
 from sklearn.metrics.pairwise import cosine_similarity
-
 import pandas as pd
 import pickle
 import json
@@ -23,9 +22,6 @@ all_symptoms = pickle.load(open('all_symptoms', 'rb'))
 
 app = Flask(__name__)
 
-# Get FRONTEND_URI from environment variables
-frontend_uri = os.getenv('FRONTEND_URI')
-
 # Enable CORS for all origins
 CORS(app, resources={r"/api/*": {"origins": "*"}})
 
@@ -36,9 +32,7 @@ def similar(dis):
     idx = data.index(dis)
     distances = similarity[idx]
     dis_list = sorted(list(enumerate(distances)), reverse=True, key=lambda x: x[1])[1:4]
-    final_list = []
-    for i in dis_list:
-        final_list.append(data[i[0]])
+    final_list = [data[i[0]] for i in dis_list]
     return final_list
 
 # Home Route
@@ -53,7 +47,6 @@ def get_data():
     user_symptoms = data.get('selectedDiseases', [])
     print("Data received")
 
-    # Process the data as needed
     inp = {col: 0 for col in all_symptoms}
     print("Process the data")
 
@@ -72,6 +65,5 @@ def get_data():
     return jsonify(result)
 
 if __name__ == "__main__":
-    # Use the provided PORT environment variable if available, otherwise use port 10000
     port = int(os.environ.get("PORT", 7801))
     app.run(debug=True, host="0.0.0.0", port=port)

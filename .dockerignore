@@ -4,3 +4,5 @@ __pycache__/
 *.pyc
 JupyterNotebookForMLModel.ipynb
 readme.md
+venv
+.github
