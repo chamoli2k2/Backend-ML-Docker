@@ -3,7 +3,7 @@
 ## Overview
 The Machine Learning Disease Prediction Web App is a comprehensive health platform developed using React and Vite for the front end, and Flask for the backend. The primary objective is to provide users with an intelligent and user-friendly interface for predicting potential diseases based on input symptoms.
 
-[View Website](https://moderndiseasedetector.onrender.com/)
+[View Website](https://purple-moss-093e9111e.5.azurestaticapps.net/)
 
 
 ## Key Features
@@ -79,10 +79,10 @@ The Machine Learning Disease Prediction Web App is a comprehensive health platfo
    - Deploy the trained model in a production environment, considering scalability and performance.
 
 ## Architecture Diagram
-![Architecture](./images/image4.png)
+![Architecture](./images/image3.png)
 
 ## Result
-![Result](./images/image5.png)
+![Result](./images/image4.png)
    - It is evident from the table that SVC is performing best when it comes to accuracy but
      we still selected Bagging(SVC) because Bagging is an ensemble technique and offers
      less variance in comparison to SIngle SVC model and makes it more robust.
@@ -94,4 +94,3 @@ The Machine Learning Disease Prediction Web App is not just a diagnostic tool; i
 ## Images
 ![HOMEPAGE](./images/image1.png)
 ![SEARCH](./images/image2.png)
-![RESULT](./images/image3.png)
